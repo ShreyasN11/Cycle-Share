@@ -40,7 +40,7 @@ function Profile() {
       setProfile(updatedProfile);
       setIsEditingProfile(false);
     } catch (error) {
-      console.error('Failed to update profile:', error);
+      console.error('Failed to update your profile:', error);
     }
   };
 
