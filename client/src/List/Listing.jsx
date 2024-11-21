@@ -30,7 +30,7 @@ export default function Listing() {
       if (user?.id) {
         try {
           console.log(user.id)
-          const response = await fetch(`https://cycle-share.onrender.com/${user.id}`)
+          const response = await fetch(`https://cycle-share.onrender.com/getListedCycle/${user.id}`)
           if (response.ok) {
             const data = await response.json()
             console.log(data);
