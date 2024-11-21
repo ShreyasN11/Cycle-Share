@@ -30,7 +30,7 @@ function Tabslist() {
     // Fetch listed cycles from the backend
     const fetchListedCycles = async () => {
       try {
-        const response = await fetch(`https://cycle-share.onrender.com/${user.id}`); // Fetch listed cycles by user ID
+        // const response = await fetch(`https://cycle-share.onrender.com/getListedCycle${user.id}`); // Fetch listed cycles by user ID
         if (!response.ok) {
           throw new Error('Failed to fetch listed cycles');
         }
