@@ -30,7 +30,7 @@ export default function Listing() {
       if (user?.id) {
         try {
           console.log(user.id)
-          const response = await fetch(`http://localhost:3500/getListedCycle/${user.id}`)
+          const response = await fetch(`https://cycle-share.onrender.com/${user.id}`)
           if (response.ok) {
             const data = await response.json()
             console.log(data);
@@ -91,7 +91,7 @@ export default function Listing() {
         })
       } else {
         // Add new listing
-        const response = await fetch('http://localhost:3500/addListedCycle', {
+        const response = await fetch('https://cycle-share.onrender.com/addListedCycle', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

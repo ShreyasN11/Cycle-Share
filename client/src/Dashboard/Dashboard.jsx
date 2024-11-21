@@ -20,7 +20,7 @@ export default function Dashboard() {
               name: user.fullName,
             };
             console.log(userData)
-            const addUserResponse = await fetch('http://localhost:3500/addUser', {
+            const addUserResponse = await fetch('https://cycle-share.onrender.com/addUser', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
