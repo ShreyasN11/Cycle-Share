@@ -1,0 +1,78 @@
+name: CycleShare CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  frontend-build:
+    name: Frontend Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Navigate to Frontend Directory
+        run: cd client
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd client
+          npm install
+
+      - name: Lint Frontend Code (Optional but Recommended)
+        run: |
+          cd client
+          npm run lint
+
+      - name: Build Frontend
+        run: |
+          cd client
+          npm run build
+
+      - name: Upload Frontend Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-build
+          path: client/dist
+
+  backend-build:
+    name: Backend Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Navigate to Backend Directory
+        run: cd server
+
+      - name: Install Backend Dependencies
+        run: |
+          cd server
+          npm install
+
+      - name: Lint Backend Code (Optional but Recommended)
+        run: |
+          cd server
+          npm run lint
+
+      - name: Test Backend
+        run: |
+          cd server
+          npm test
