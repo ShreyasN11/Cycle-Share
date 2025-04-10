@@ -49,6 +49,7 @@ _Earn by listing your own cycle when it’s not in use._
 | **Node.js**   | Backend runtime                  |
 | **Express.js**| Server-side framework            |
 | **MongoDB**   | NoSQL database for data storage  |
+| **Clerk**     | Authentication                   |
 | **Vite**      | Fast development environment     |
 
 ---
